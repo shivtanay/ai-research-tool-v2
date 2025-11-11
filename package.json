@@ -1,0 +1,34 @@
+{
+  "name": "ai-research-synthesizer",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "description": "AI-powered tool for synthesizing scientific research across multiple disciplines",
+  "author": "mohd241-svg",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mohd241-svg/Ai-Research-Synthesizer.git"
+  },
+  "homepage": "https://mohd241-svg.github.io/Ai-Research-Synthesizer/",
+  "keywords": ["ai", "research", "synthesis", "gemini", "react", "typescript", "vite"],
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "deploy": "npm run build && gh-pages -d dist"
+  },
+  "dependencies": {
+    "@google/genai": "^1.27.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "@vitejs/plugin-react": "^5.0.0",
+    "gh-pages": "^6.3.0",
+    "serve": "^14.2.5",
+    "typescript": "~5.8.2",
+    "vite": "^6.4.1"
+  }
+}
