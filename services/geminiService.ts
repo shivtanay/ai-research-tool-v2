@@ -2,12 +2,16 @@
 import { GoogleGenAI, Type } from "@google/genai";
 import type { AnalysisResult } from '../types';
 
-if (!process.env.GEMINI_API_KEY) {
-  console.error("GEMINI_API_KEY environment variable not set. Please check your .env.local file.");
-  throw new Error("GEMINI_API_KEY environment variable not set");
+// @ts-ignore - Vite environment variable
+const viteEnv = import.meta.env;
+
+const apiKey = viteEnv.VITE_GEMINI_API_KEY || null;
+
+if (!apiKey) {
+  console.warn("GEMINI_API_KEY not configured. Some features may not work. Please set VITE_GEMINI_API_KEY environment variable.");
 }
 
-const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+const ai = apiKey ? new GoogleGenAI({ apiKey }) : null;
 
 const responseSchema = {
   type: Type.OBJECT,
@@ -66,6 +70,10 @@ const responseSchema = {
 };
 
 export const analyzeLiterature = async (topic: string, disciplines: string[]): Promise<AnalysisResult> => {
+  if (!ai) {
+    throw new Error("Gemini API key is not configured. Please set VITE_GEMINI_API_KEY environment variable.");
+  }
+
   const disciplineList = disciplines.join(', ');
   const prompt = `
     Act as an expert virtual scientist's assistant. Your task is to autonomously scan, analyze, and synthesize scientific research literature.
