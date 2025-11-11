@@ -7,7 +7,7 @@ export default defineConfig(({ mode }) => {
     const isDev = mode === 'development';
     
     return {
-      base: isDev ? '/' : '/Ai-Research-Synthesizer/',
+      base: isDev ? '/' : '/ai-research-tool-v2/',
       server: {
         port: 3000,
         host: '0.0.0.0',

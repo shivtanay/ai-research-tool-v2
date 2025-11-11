@@ -8,9 +8,9 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mohd241-svg/Ai-Research-Synthesizer.git"
+    "url": "https://github.com/shivtanay/ai-research-tool-v2.git"
   },
-  "homepage": "https://mohd241-svg.github.io/Ai-Research-Synthesizer/",
+  "homepage": "https://shivtanay.github.io/ai-research-tool-v2/",
   "keywords": ["ai", "research", "synthesis", "gemini", "react", "typescript", "vite"],
   "scripts": {
     "dev": "vite",
